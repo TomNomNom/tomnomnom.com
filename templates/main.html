@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title><?php echo $this->e($title)?: "Tom Hudson's blog - TomNomNom.com"; ?></title>
+    <title>{{.Title}}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="theme-color" content="#119C11">
-    <link rel="icon" sizes="64x64" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="64x64" href="/images/favicon.ico" type="image/x-icon">
     <link href="http://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono" rel="stylesheet" type="text/css">
@@ -19,7 +19,7 @@
     </header>
 
     <section class="main">
-      <?php $this->render($subpage, $subpageData); ?>
+			{{.Body}}
     </section>
 
     <footer>
@@ -27,7 +27,7 @@
     </footer>
   </body>
 
-  <?php if(isSet($gaTracking) && $gaTracking): ?>
+	{{if .DevMode}}
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-22278243-3']);
@@ -39,5 +39,5 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
     </script>
-  <?php endif; ?>
+	{{end}}
 </html>
