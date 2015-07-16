@@ -24,7 +24,7 @@ Before I go any further I must point out that you will *always* have *some* glob
 
     $foo = new Foo();
     $foo->greet(); //Foo
-    $bar = new Boo();
+    $bar = new Bar();
     $bar->greet(); //Bar
     $foo->greet(); //Bar
 
